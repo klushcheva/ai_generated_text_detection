@@ -20,7 +20,7 @@ COPY telegram_bot.py .
 # Environment variables
 ENV PYTHONUNBUFFERED=1 \
     PYTHONPATH=/app \
-    TELEGRAM_TOKEN="" \
+    TELEGRAM_TOKEN={TELEGRAM_TOKEN} \
     REDIS_HOST="redis" \
     FASTAPI_URL="http://model:8000"
 

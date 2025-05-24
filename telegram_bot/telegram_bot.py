@@ -16,7 +16,7 @@ from redis import Redis
 
 # Configuration
 REDIS_HOST = os.getenv("REDIS_HOST", "redis")
-TELEGRAM_TOKEN = "7576648646:AAFxMOBoSotMaZPHdHu1bLfCA0ZnDk4cFyA"
+TELEGRAM_TOKEN = os.getenv("TELEGRAM_TOKEN")
 FASTAPI_URL = "http://model:8000"
 
 # Initialize Redis (critical fix)

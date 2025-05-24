@@ -1,19 +1,15 @@
-# Use PyTorch base image for GPU support
 FROM pytorch/pytorch:2.0.1-cuda11.7-cudnn8-runtime
 
 WORKDIR /app
 
-# Install system dependencies
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
     libgl1 \
     libglib2.0-0 && \
     rm -rf /var/lib/apt/lists/*
 
-# Copy requirements first
 COPY requirements.txt .
 
-# Install Python dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 # Copy model files and source code
 COPY app.py .
